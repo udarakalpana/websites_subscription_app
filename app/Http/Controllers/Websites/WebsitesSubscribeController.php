@@ -12,9 +12,9 @@ class WebsitesSubscribeController extends Controller
 {
     public function subscribe(WebsitesSubscribeRequest $request, GetSubscribeData $getSubscribeData): JsonResponse
     {
-        $subscribe = $request->validated();
+        $validSubscribe = $request->validated();
 
-        $data = $getSubscribeData->extractSubscribeData($subscribe);
+        $data = $getSubscribeData->extractSubscribeData($validSubscribe);
 
         WebsitesSubscribe::create([
             'user_id' => $data['user_id'],

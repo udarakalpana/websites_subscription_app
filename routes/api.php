@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Websites\WebsitesController;
 use App\Http\Controllers\Websites\WebsitesSubscribeController;
+use App\Http\Controllers\Posts\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +24,9 @@ Route::middleware(['auth:sanctum'])->group(function (){
 
     Route::controller(WebsitesSubscribeController::class)->group(function (){
         Route::post('/subscribe', 'subscribe')->name('website.subscribe');
+    });
+
+    Route::controller(PostsController::class)->group(function (){
+        Route::post('/post', 'create')->name('post.create');
     });
 });
