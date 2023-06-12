@@ -9,8 +9,6 @@ class GetSubscribeData
     public function extractSubscribeData($subscribe)
     {
         $subscribeData = $subscribe['subscribe'];
-        $data =  $subscribeData[0];
-
-        return $data;
+        return $subscribeData[0];
     }
 }

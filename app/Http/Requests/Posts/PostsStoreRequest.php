@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Websites;
+namespace App\Http\Requests\Posts;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class WebsitesSubscribeRequest extends FormRequest
+class PostsStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,11 @@ class WebsitesSubscribeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'subscribe' => 'required|array',
-            'subscribe.*.user_id' => 'required|integer',
-            'subscribe.*.website_id' => 'required|integer',
-            'subscribe.*.website_name' => 'required|string',
+            'post' => 'required|array',
+            'post.*.user_id' => 'required|integer',
+            'post.*.website_id' => 'required|integer',
+            'post.*.post_title' => 'required|string',
+            'post.*.post_body' => 'required|string',
         ];
     }
 }
